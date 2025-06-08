@@ -1,0 +1,70 @@
+/* pages/Giving.css */
+
+.giving-page {
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f3f7f9;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  text-align: center;
+  color: #2d3436;
+}
+
+.giving-page h2 {
+  font-size: 2.8rem;
+  margin-bottom: 15px;
+  color: #0984e3;
+}
+
+.giving-page p {
+  font-size: 1.1rem;
+  margin-bottom: 25px;
+}
+
+.giving-options {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+}
+
+.giving-method {
+  background-color: white;
+  padding: 20px 30px;
+  border-radius: 10px;
+  width: 280px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+.giving-method:hover {
+  box-shadow: 0 8px 18px rgba(0,0,0,0.15);
+}
+
+.giving-method h3 {
+  color: #0984e3;
+  margin-bottom: 12px;
+  font-weight: 700;
+}
+
+.giving-method p {
+  margin: 5px 0;
+  color: #636e72;
+  font-size: 1rem;
+}
+
+.thank-you {
+  margin-top: 30px;
+  font-style: italic;
+  color: #00b894;
+  font-weight: 600;
+}
+
+@media (max-width: 600px) {
+  .giving-options {
+    flex-direction: column;
+    align-items: center;
+  }
+}

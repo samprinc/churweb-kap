@@ -1,0 +1,134 @@
+/* HERO SECTION */
+.home-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 20px;
+  min-height: 70vh;
+  background: linear-gradient(135deg, #3a5068, #5bc0be); /* Dark/blueish */
+  color: white;
+  text-align: center;
+}
+
+.hero-section {
+  max-width: 700px;
+}
+
+/* TEXT */
+.hero-section h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  font-family: 'Georgia', serif;
+  text-shadow: 2px 2px 4px rgba(241, 231, 231, 0.5);
+}
+
+.welcome-text {
+  font-size: 1.25rem;
+  margin-bottom: 30px;
+  line-height: 1.6;
+  font-style: italic;
+  font-family: 'Arial', sans-serif;
+}
+
+/* BUTTON */
+.join-btn {
+  background-color: #f0c040;
+  color: #1e2a38;
+  padding: 12px 28px;
+  border: none;
+  border-radius: 25px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+  transition: background-color 0.3s ease;
+}
+
+.join-btn:hover {
+  background-color: #d1a32a;
+}
+
+.mission-section {
+  min-height: 100vh;
+  padding: 60px 20px;
+  background-color: #1e2a38;
+  color: white;
+  text-align: center;
+}
+
+.services-section {
+  min-height: 100vh;
+  padding: 60px 20px;
+  background-color: #f4f4f4;
+  text-align: center;
+}
+
+.services-section h2 {
+  margin-bottom: 40px;
+  font-size: 2rem;
+  color: #1e2a38;
+}
+
+.service-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.service-card {
+  background: white;
+  color: #1e2a38;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  max-width: 250px;
+  width: 100%;
+  transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+}
+
+.service-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.service-card p {
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+.service-card a {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 20px;
+  background-color: #f0c040;
+  color: #1e2a38;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+.service-icon {
+  color: #f0c040;
+  margin-bottom: 15px;
+}
+
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+  .hero-section h1 {
+    font-size: 2rem;
+  }
+
+  .welcome-text {
+    font-size: 1rem;
+  }
+
+  .join-btn {
+    padding: 10px 24px;
+    font-size: 1rem;
+  }
+}

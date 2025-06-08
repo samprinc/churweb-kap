@@ -1,0 +1,194 @@
+/* pages/Sermons.css */
+
+.sermons-page {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  font-family: 'Verdana', Geneva, Tahoma, sans-serif;
+  color: #2d3436;
+  background-color: #f8f9fa;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  text-align: center;
+}
+
+.sermons-page h2 {
+  font-size: 2.6rem;
+  margin-bottom: 30px;
+  color: #6c5ce7;
+}
+
+.sermons-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.sermon-card {
+  background-color: white;
+  padding: 20px 25px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(108,92,231,0.2);
+  transition: transform 0.3s ease;
+}
+
+.sermon-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 18px rgba(108,92,231,0.3);
+}
+
+.sermon-card h3 {
+  margin-bottom: 10px;
+  color: #6c5ce7;
+}
+
+.sermon-card p {
+  margin: 5px 0;
+  font-size: 1rem;
+  color: #636e72;
+}
+
+.listen-btn {
+  margin-top: 15px;
+  padding: 8px 16px;
+  border: none;
+  background-color: #6c5ce7;
+  color: white;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.listen-btn:hover {
+  background-color: #5a4bcf;
+}
+
+@media (max-width: 600px) {
+  .sermons-page h2 {
+    font-size: 1.8rem;
+  }
+
+  .sermon-card {
+    padding: 15px 20px;
+  }
+
+  .listen-btn {
+    width: 100%;/* pages/Sermons.css */
+
+.sermons-page {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+  font-family: 'Verdana', Geneva, Tahoma, sans-serif;
+  color: #2d3436;
+  background-color: #f8f9fa;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  text-align: center;
+}
+
+.sermons-page h2 {
+  font-size: 2.6rem;
+  margin-bottom: 30px;
+  color: #6c5ce7;
+}
+
+.sermons-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.sermon-card {
+  background-color: white;
+  padding: 20px 25px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(108,92,231,0.2);
+  transition: transform 0.3s ease;
+}
+
+.sermon-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 18px rgba(108,92,231,0.3);
+}
+
+.sermon-card h3 {
+  margin-bottom: 10px;
+  color: #6c5ce7;
+}
+
+.sermon-card p {
+  margin: 5px 0;
+  font-size: 1rem;
+  color: #636e72;
+}
+
+.add-sermon-form {
+  background: white;
+  margin-top: 40px;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 18px rgba(108,92,231,0.15);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+}
+
+.add-sermon-form h3 {
+  color: #6c5ce7;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.add-sermon-form input,
+.add-sermon-form select {
+  width: 100%;
+  padding: 10px 12px;
+  margin-bottom: 15px;
+  border-radius: 6px;
+  border: 1.5px solid #dfe6e9;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.add-sermon-form input:focus,
+.add-sermon-form select:focus {
+  border-color: #6c5ce7;
+}
+
+.add-sermon-form button {
+  background-color: #6c5ce7;
+  color: white;
+  padding: 12px 0;
+  width: 100%;
+  font-weight: 700;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.add-sermon-form button:disabled {
+  background-color: #b2bec3;
+  cursor: not-allowed;
+}
+
+.add-sermon-form button:hover:not(:disabled) {
+  background-color: #5a4bcf;
+}
+
+@media (max-width: 700px) {
+  .sermons-page {
+    padding: 15px;
+  }
+
+  .add-sermon-form {
+    padding: 20px;
+  }
+}
+
+  }
+}

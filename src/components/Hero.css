@@ -1,0 +1,22 @@
+.hero {
+  background: url('https://source.unsplash.com/1600x600/?church') no-repeat center center/cover;
+  color: rgb(216, 79, 25);
+  padding: 100px 20px;
+}
+
+.hero h1 {
+  font-size: 3rem;
+}
+
+.hero p {
+  font-size: 1.5rem;
+}
+.footer {
+  background-color: #004080;
+  color: white;
+  padding: 1rem;
+  margin-top: 2rem;
+}
+.footer p {
+  margin: 0;
+}

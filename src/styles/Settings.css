@@ -1,0 +1,139 @@
+.settings-container {
+  max-width: 600px;
+  margin: 3rem auto;
+  padding: 2rem;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.settings-title {
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 0.5rem;
+  color: #1f2937;
+}
+
+.settings-description {
+  text-align: center;
+  color: #6b7280;
+  margin-bottom: 2rem;
+}
+
+.settings-section {
+  margin-bottom: 2rem;
+}
+
+.settings-section h3 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: #111827;
+  border-bottom: 1px solid #e5e7eb;
+  padding-bottom: 0.5rem;
+}
+
+.setting-item {
+  margin-bottom: 1.5rem;
+}
+
+.setting-item label {
+  font-weight: 600;
+  display: block;
+  color: #374151;
+  margin-bottom: 0.3rem;
+}
+
+.setting-item p {
+  color: #4b5563;
+  font-size: 0.95rem;
+}
+
+.setting-item input[type="password"] {
+  width: 100%;
+  padding: 0.6rem;
+  font-size: 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  margin-top: 0.5rem;
+}
+
+.toggle {
+  display: flex;
+  align-items: center;
+  margin-top: 0.5rem;
+}
+
+.toggle input[type="checkbox"] {
+  height: 0;
+  width: 0;
+  visibility: hidden;
+}
+
+.toggle label {
+  cursor: pointer;
+  text-indent: -9999px;
+  width: 40px;
+  height: 20px;
+  background: #d1d5db;
+  display: block;
+  border-radius: 100px;
+  position: relative;
+}
+
+.toggle label:after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 16px;
+  height: 16px;
+  background: #fff;
+  border-radius: 90px;
+  transition: 0.3s;
+}
+
+.toggle input:checked + label {
+  background: #2563eb;
+}
+
+.toggle input:checked + label:after {
+  left: calc(100% - 2px - 16px);
+}
+
+.hint {
+  font-size: 0.85rem;
+  color: #6b7280;
+  margin-top: 0.3rem;
+}
+
+.danger-zone {
+  border-top: 1px solid #fca5a5;
+  padding-top: 1rem;
+}
+
+.danger-text {
+  color: #b91c1c;
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+}
+
+.delete-button {
+  background-color: #dc2626;
+  color: #fff;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.delete-button:hover {
+  background-color: #b91c1c;
+}
+.delete-button:disabled {
+  background-color: #fca5a5;
+  cursor: not-allowed;
+}
