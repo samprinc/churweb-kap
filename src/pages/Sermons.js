@@ -1,26 +1,32 @@
-// pages/Sermons.js
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import '../styles/Sermons.css';
 
-const sermons = [
-  { title: 'Faith in Action', date: 'June 1, 2025', speaker: 'Pastor John Doe' },
-  { title: 'The Power of Prayer', date: 'May 25, 2025', speaker: 'Pastor Jane Smith' },
-  { title: 'Living with Hope', date: 'May 18, 2025', speaker: 'Pastor Mark Johnson' },
-];
-
 const Sermons = () => {
+  const [sermons, setSermons] = useState([]);
+
+  useEffect(() => {
+    fetch("https://chweb-back.onrender.com/api/sermons/")
+      .then(res => res.json())
+      .then(data => setSermons(data))
+      .catch(err => console.error('Failed to fetch sermons:', err));
+  }, []);
+
   return (
     <div className="sermons-page">
       <h2>Past Sermons</h2>
       <ul className="sermons-list">
-        {sermons.map((sermon, idx) => (
-          <li key={idx} className="sermon-card">
-            <h3>{sermon.title}</h3>
-            <p><strong>Date:</strong> {sermon.date}</p>
-            <p><strong>Speaker:</strong> {sermon.speaker}</p>
-            <button className="listen-btn">Listen</button>
-          </li>
-        ))}
+        {sermons.length === 0 ? (
+          <li>Loading sermons...</li>
+        ) : (
+          sermons.map((sermon, idx) => (
+            <li key={idx} className="sermon-card">
+              <h3>{sermon.title}</h3>
+              <p><strong>Date:</strong> {sermon.date}</p>
+              <p><strong>Speaker:</strong> {sermon.speaker}</p>
+              <button className="listen-btn">Listen</button>
+            </li>
+          ))
+        )}
       </ul>
     </div>
   );

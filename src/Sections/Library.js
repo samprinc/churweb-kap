@@ -1,24 +1,32 @@
 import React, { useEffect, useState } from 'react';
 
 const Library = ({ searchQuery }) => {
-  const defaultResources = [
-    { title: 'Jesus is the greatest', author: '1', downloadable: true },
-    { title: 'The message that works', author: 'TL Osbon', downloadable: true },
-    // ... other static books
-  ];
-
-  const [uploadedBooks, setUploadedBooks] = useState([]);
+  const [books, setBooks] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
-    const saved = JSON.parse(localStorage.getItem('books')) || [];
-    setUploadedBooks(saved);
+    fetch("https://chweb-back.onrender.com/api/books/")
+      .then((res) => {
+        if (!res.ok) throw new Error('Failed to fetch books');
+        return res.json();
+      })
+      .then((data) => {
+        setBooks(data);
+        setLoading(false);
+      })
+      .catch((err) => {
+        setError(err.message);
+        setLoading(false);
+      });
   }, []);
 
-  const allBooks = [...defaultResources, ...uploadedBooks];
-
-  const filteredBooks = allBooks.filter((book) =>
+  const filteredBooks = books.filter((book) =>
     `${book.title} ${book.author}`.toLowerCase().includes(searchQuery.toLowerCase())
   );
+
+  if (loading) return <p>Loading books...</p>;
+  if (error) return <p>Error: {error}</p>;
 
   return (
     <div>
@@ -29,14 +37,8 @@ const Library = ({ searchQuery }) => {
             <div className="resource-card" key={index}>
               <h3>{book.title}</h3>
               <p>{book.author}</p>
-              {book.downloadable && book.pdfData ? (
-                <a
-                  href={book.pdfData}
-                  download={`${book.title}.pdf`}
-                  className="download-btn"
-                >
-                  Download PDF
-                </a>
+              {book.downloadable && book.pdfUrl ? (
+                <a href={book.pdfUrl} download className="download-btn">Download PDF</a>
               ) : (
                 <span className="physical-only">Physical Copy Only</span>
               )}

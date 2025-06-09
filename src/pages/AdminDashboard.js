@@ -19,7 +19,7 @@ const AdminDashboard = () => {
   const [pdfFile, setPdfFile] = useState(null);
   const [bookList, setBookList] = useState(JSON.parse(localStorage.getItem('books')) || []);
 
-  const [shopItem, setShopItem] = useState('');
+  const [shopPrice, setShopPrice] = useState('');
   const [shopItems, setShopItems] = useState(JSON.parse(localStorage.getItem('shopItems')) || []);
 
   const handleWelcomeSubmit = () => {
@@ -85,13 +85,18 @@ const AdminDashboard = () => {
   };
 
   const handleAddShopItem = () => {
-    if (shopItem) {
-      const updatedItems = [...shopItems, shopItem];
-      setShopItems(updatedItems);
-      localStorage.setItem('shopItems', JSON.stringify(updatedItems));
-      setShopItem('');
-    }
-  };
+  if (shopItems && shopPrice) {
+    const newItem = { name: shopItems, price: parseFloat(shopPrice) };
+    const updatedItems = [...shopItems, newItem];
+    setShopItems(updatedItems);
+    localStorage.setItem('shopItems', JSON.stringify(updatedItems));
+    setShopItems('');
+    setShopPrice('');
+  } else {
+    alert('Please enter both item name and price.');
+  }
+};
+
 
   return (
     <div className="admin-dashboard">
@@ -198,16 +203,30 @@ const AdminDashboard = () => {
 
 
       <section>
-        <h3>Add Shop Item</h3>
-        <input
-          type="text"
-          value={shopItem}
-          onChange={(e) => setShopItem(e.target.value)}
-          placeholder="Shop Item Name"
-        />
-        <button onClick={handleAddShopItem}>Add Item</button>
-        <ul>{shopItems.map((item, index) => <li key={index}>{item}</li>)}</ul>
-      </section>
+  <h3>Add Shop Item</h3>
+  <input
+    type="text"
+    value={shopItems}
+    onChange={(e) => setShopItems(e.target.value)}
+    placeholder="Item Name"
+  />
+  <input
+    type="number"
+    value={shopPrice}
+    onChange={(e) => setShopPrice(e.target.value)}
+    placeholder="Price"
+    style={{ marginLeft: '10px' }}
+  />
+  <button onClick={handleAddShopItem}>Add Item</button>
+  <ul>
+    {shopItems.map((item, index) => (
+      <li key={index}>
+        {item.name} - ${item.price?.toFixed(2)}
+      </li>
+    ))}
+  </ul>
+</section>
+
     </div>
   );
 };

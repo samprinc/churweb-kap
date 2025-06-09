@@ -13,7 +13,10 @@ const Dashboard = ({ user }) => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   const handleLogout = () => {
+    // TODO: Replace this with real logout logic
     alert('Logout triggered');
+    // Example: await axios.post('/api/logout');
+    // Redirect to login page, clear auth tokens, etc.
   };
 
   const renderSection = () => {
@@ -44,7 +47,7 @@ const Dashboard = ({ user }) => {
                 className={activeSection === section ? 'active' : ''}
                 onClick={() => {
                   setActiveSection(section);
-                  setSidebarOpen(false); // close sidebar on mobile after selecting
+                  setSidebarOpen(false);
                 }}
               >
                 {section}
@@ -58,7 +61,7 @@ const Dashboard = ({ user }) => {
       <main className="dashboard-main">
         <header className="dashboard-header">
           <h1>Welcome, {user?.email || 'User'}!</h1>
-          <p>Resource </p>
+          <p>Resource</p>
           <p className="sub">
             Grow spiritually with devotionals, sermons, and study guides curated for your faith journey.
           </p>
